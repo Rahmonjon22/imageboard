@@ -22,7 +22,4 @@ export default makeStyles((theme) => ({
     marginBottom: 10,
   },
 }));
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
+
