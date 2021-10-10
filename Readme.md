@@ -7,6 +7,7 @@ npx create-react-app ./
 npm install axios moment react-file-base64 redux redux-thunk  => axios for api  moment for time react-file-base64 for image storage 
 delete src folder & create src file again plus create index js inside it
 
+npm install @material-ui/core
 
   ## server folder
 npm init -y  to create package.json
