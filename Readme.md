@@ -9,6 +9,8 @@ delete src folder & create src file again plus create index js inside it
 
 npm install @material-ui/core
 
+npm install react-redux
+
   ## server folder
 npm init -y  to create package.json
 npm install cors express mongoose
