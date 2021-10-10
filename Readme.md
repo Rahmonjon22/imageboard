@@ -14,3 +14,7 @@ npm install cors express mongoose
 touch index.js
 
  "type": "module", in package.json in order to use import instead of require
+
+connected to mongoDB
+
+created controllers & routes
