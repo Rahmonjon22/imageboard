@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
-import camera from "./components/images/camera.png";
+import camera from "./images/camera.png";
 
 import Form from './components/Form/Form';
 import AllPosts from './components/Posts/AllPosts';
