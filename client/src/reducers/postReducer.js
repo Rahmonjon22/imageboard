@@ -1,41 +1,32 @@
 
-const postReducer = (post = [], action) => {
-    switch (action.type) {
-        case "FETCH_ALL":
-            return posts;
-        case "CREATE":
-            return posts;
-
-        default:
-            return posts;
-    }
-};
-
-export default postReducer;
-app.post("/index/:id", function(req,res){
-    TestData.findById(req.params.id, function(err, theUser){
-        if(err){
-            console.log(err);
-        } else {
-            theUser.likes += 1;
-            theUser.save();
-            console.log(theUser.likes);
-        }
-    });
-});
-
-app.post("/index/:id", function(req,res){
-    TestData.findById(req.params.id, function(err, theUser){
-        if(err){
-            console.log(err);
-            return res.status(500).send('Something went wrong!'); // You should notify user about any error    
-        } else {
-            theUser.likes += 1;
-            theUser.save(function(err){
-            if(err) return res.status(500).send('Something went wrong!');
-            return res.send({likes_count: theUser.likes});
-            });
+   
+import {
+    FETCH_ALL,
+    CREATE,
+    UPDATE,
+    DELETE,
+    LIKE,
+  } from "../constants/actionTypes";
   
-        }
-    });
-  });
+  const postReducer = (posts = [], action) => {
+    switch (action.type) {
+      case FETCH_ALL:
+        return action.payload;
+      case CREATE:
+        return [...posts, action.payload];
+      case UPDATE:
+        return posts.map((post) =>
+          post._id === action.payload._id ? action.payload : post
+        );
+      case DELETE:
+        return posts.filter((post) => post._id !== action.payload);
+      case LIKE:
+        return posts.map((post) =>
+          post._id === action.payload._id ? action.payload : post
+        );
+      default:
+        return posts;
+    }
+  };
+  
+  export default postReducer;
